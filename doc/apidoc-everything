@@ -1,0 +1,14 @@
+#!/usr/bin/env zsh
+
+
+apidoc () {
+    [[ -d $1 ]] && { rm -r $1 }
+    sphinx-apidoc -o $1 ../$1
+    rm $1/modules.rst
+}
+
+apidoc chlamymodel
+apidoc FMM
+apidoc flagella
+apidoc RFT
+apidoc extern

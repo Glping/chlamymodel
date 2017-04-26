@@ -1,0 +1,71 @@
+#+TITLE: Hydrodynamic calculation on microswimmers
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="README.css" />
+
+Library and executable code can be used with =python3=.
+
+* install instructions
+
+** chlamymodel
+
+   The chlamymodel library relies on pre-calculated friction matrices
+   that are saved in the python_internal pickle format. Those are
+   provided in the folder install_data and have to be copied into your
+   =${HOME}= folder:
+
+   #+BEGIN_SRC sh
+   mkdir -p ~/.chlamymodel
+   cp install_data/*.pickle ~/.chlamymodel
+   #+END_SRC
+
+** friction matrix
+
+   The friction matrices themselves are created with a pre-compiled
+   program utilizing the fast-multipole boundary element
+   method. Executable files for Windows and Linux as well as two
+   configuration files are installed as follows:
+
+   #+BEGIN_SRC sh
+   mkdir -p ~/.FMBEM
+   cp install_data/*.exe ~/.FMBEM
+   cp install_data/*.cnd ~/.FMBEM
+   #+END_SRC
+
+** library usage
+
+   To use the python libraries, set the python path accordingly
+
+   #+BEGIN_SRC sh
+   export PYTHONPATH=${PYTHONPATH}:${this_install}
+   #+END_SRC
+
+   with =${this_install}= being the folder in which this README file is
+   saved.
+
+* example files
+
+  The folders =example_*= contain python files that can be executed when
+  the files in =install_data= are copied to their appropriate places,
+  see [[install instructions][install intructions]].
+
+** =example_chlamymodel=
+
+** =example_computing_friction=
+
+** =example_sperm_swimming=  
+
+
+* create the documentation
+
+  A documentation web-page can be generated using sphinx. For this
+  aim, install sphinx. Then execute =sphinx-quickstart= from within the
+  =doc= folder. It is important, that you do *not* overwrite the file
+  =doc/index/rst=. Also, make use of the =autodoc= feature. Then, execute
+  from within the =doc= folder:
+
+  #+BEGIN_SRC sh
+  ./apidoc-everything # creates the documentation files for the modules
+  make html           # generates html from them
+  #+END_SRC
+
+  Then, there should be a folder =_build/html= containing the file
+  =index.html=, which is to be opened in a web browser.
