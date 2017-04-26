@@ -204,9 +204,9 @@ def triangulation2file(filename='input.dat',
     for i in range(numTria):
         jj = triangulation.triangulation[i]
         ii = (int(jj[0]) + 1, int(jj[1]) + 1, int(jj[2]) + 1)
-        v1 = triangulation.velocities[jj[0]]
-        v2 = triangulation.velocities[jj[1]]
-        v3 = triangulation.velocities[jj[2]]
+        v1 = triangulation.velocities[int(jj[0])]
+        v2 = triangulation.velocities[int(jj[1])]
+        v3 = triangulation.velocities[int(jj[2])]
         v = 0.33333333 * (v1 + v2 + v3)
         f.write('{0}\t{1[0]:d}\t{1[1]:d}\t{1[2]:d}\t'.format(i + 1, ii))
         f.write('1\t1\t1\t{0[0]}\t{0[1]}\t{0[2]}\n'.format(v))

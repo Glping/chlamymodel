@@ -30,6 +30,13 @@ Library and executable code can be used with =python3=.
    cp install_data/*.cnd ~/.FMBEM
    #+END_SRC
 
+** data files
+
+   #+BEGIN_SRC sh
+   cp -r install_data/sperm_data ~/.sperm_data
+   #+END_SRC
+
+
 ** library usage
 
    To use the python libraries, set the python path accordingly
