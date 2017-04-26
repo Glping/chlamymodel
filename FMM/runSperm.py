@@ -1,6 +1,7 @@
 import copy
 import itertools
 import shutil
+import os.path
 
 import extern.FMBEM as FMBEM
 import FMM.extractquantities as extr
@@ -15,7 +16,7 @@ def realistic_beat_at(time, omega, ds):
     """ receive spermal geometric data """
     head = (5, 2.5)
 
-    data = scipy.io.loadmat('/home/gary/MPI/bin/tracking/sperm/p02F6f05.mat')
+    data = scipy.io.loadmat(os.path.expanduser('~/.sperm_data/p02F6f05.mat'))
     psi0 = data['psi0'].reshape((44))
     psi1abs = data['psi1abs'].reshape((44))
     phiinterpol = data['phiinterpol'].reshape((44))
@@ -35,7 +36,7 @@ def realistic_beat(omega, time_resolution, ds):
 
     head = (5, 2.5)
 
-    data = scipy.io.loadmat('/home/gary/MPI/bin/tracking/sperm/p02F6f05.mat')
+    data = scipy.io.loadmat(os.path.expanduser('~/.sperm_data/p02F6f05.mat'))
     psi0 = data['psi0'].reshape((44))
     psi1abs = data['psi1abs'].reshape((44))
     phiinterpol = data['phiinterpol'].reshape((44))
