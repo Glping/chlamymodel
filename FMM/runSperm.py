@@ -71,7 +71,7 @@ def buildSpermRecipe(timestep,
     head = (5, 2.5)
 
     ## receive spermal geometric data
-    data = scipy.io.loadmat('/home/gary/MPI/data/sperm/p02F6f05.mat')
+    data = scipy.io.loadmat(os.path.expanduser('~/.sperm_data/p02F6f05.mat'))
     psi0 = data['psi0'].reshape((44))
     psi1abs = data['psi1abs'].reshape((44))
     phiinterpol = data['phiinterpol'].reshape((44))
