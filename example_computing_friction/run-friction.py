@@ -153,9 +153,9 @@ PHASE_RIGHT = float(sys.argv[2])
 AMPLITUDE_LEFT = float(sys.argv[3])
 AMPLITUDE_RIGHT = float(sys.argv[4])
 
-# DOF = sys.argv[5]
-# get_fields(PHASE_LEFT, PHASE_RIGHT, AMPLITUDE_LEFT, AMPLITUDE_RIGHT, DOF)
-# sys.exit()
+DOF = sys.argv[5]
+get_fields(PHASE_LEFT, PHASE_RIGHT, AMPLITUDE_LEFT, AMPLITUDE_RIGHT, DOF)
+sys.exit()
 
 FIELDS = [get_fields(PHASE_LEFT, PHASE_RIGHT,
                      AMPLITUDE_LEFT, AMPLITUDE_RIGHT,
