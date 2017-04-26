@@ -124,27 +124,27 @@ def run_timestep(timestep, creature, objectnames,
         or not.
         """
         jobs = {}
-        with multiprocessing.Pool(processes=processes) as pool:
+        pool = multiprocessing.Pool(processes=processes)
 
-            for (key, recipe) in rcps.items():
+        for (key, recipe) in rcps.items():
 
-                #if key[:2] in [h[0] + h[1] for h
-                #        in itertools.product(['v', 'w'], ['x', 'y', 'z'])]:
-                #    jobs[key] = pool.apply_async(FMBEM.runit,
-                #            [recipe,
-                #             objectnames,
-                #             '{0}/{1}'.format(foldername, key),
-                #             '{0}/{1}'.format(foldername, key)],
-                #            {'centered': True,
-                #             'objectname': key[3:]})
-                #else:
-                    jobs[key] = pool.apply_async(FMBEM.runit,
-                            [recipe,
-                             objectnames,
-                             '{0}/{1}'.format(foldername, key),
-                             '{0}/{1}'.format(foldername, key)])
+            #if key[:2] in [h[0] + h[1] for h
+            #        in itertools.product(['v', 'w'], ['x', 'y', 'z'])]:
+            #    jobs[key] = pool.apply_async(FMBEM.runit,
+            #            [recipe,
+            #             objectnames,
+            #             '{0}/{1}'.format(foldername, key),
+            #             '{0}/{1}'.format(foldername, key)],
+            #            {'centered': True,
+            #             'objectname': key[3:]})
+            #else:
+                jobs[key] = pool.apply_async(FMBEM.runit,
+                        [recipe,
+                         objectnames,
+                         '{0}/{1}'.format(foldername, key),
+                         '{0}/{1}'.format(foldername, key)])
 
-            return {key: job.get() for (key, job) in jobs.items()}
+        return {key: job.get() for (key, job) in jobs.items()}
 
 
     # the keys of the dictionary that is returned by the following function
