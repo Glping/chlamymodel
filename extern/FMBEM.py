@@ -1,4 +1,3 @@
-import fio
 from FMM.inputDat import writeInputAndRemembery_NEW
 from FMM.inputDat import writeInputAndRemembery_centered
 import FMM.readOutput as ro
@@ -82,6 +81,13 @@ def run_parallel(recipes, objectnames, processes=8, folder='.'):
     return res
 
 
+def makedir(foldername):
+    import os
+    import os.path
+    if not os.path.isdir(foldername):
+        os.makedirs(foldername)
+
+
 def runFMBEM(folder, system, objects, description='description'):
     """
     run the FMBEM simulation given by system, which is a dictionary with a
@@ -96,7 +102,7 @@ def runFMBEM(folder, system, objects, description='description'):
     """
     # create data files
     oldfolder = os.getcwd()
-    fio.makedir(folder)
+    makedir(folder)
     os.chdir(folder)
 
     with open('remembery.py'.format(folder), 'w') as remembery:
