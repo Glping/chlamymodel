@@ -74,8 +74,7 @@ def ruloff_chlamy(
     """
 
     oldpath = sys.path
-    # os.path.expanduser('~/.chlamy_data')
-    sys.path.append('/home/gary/MPI/data/ruloff/chosen')
+    sys.path.append(os.path.expanduser('~/.chlamy_data'))
     data_module = __import__(which)
     sys.path = oldpath
 

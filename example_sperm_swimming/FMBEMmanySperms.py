@@ -95,7 +95,7 @@ for i in range(timestepsH):
                         handlerecipes.transformed_shape(sperms),
                         spermnames,
                         processes=processes,
-                        removefolder=True)
+                        removefolder=False)
 
     V = np.linalg.lstsq(friction, F)[0]
 

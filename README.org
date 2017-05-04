@@ -32,8 +32,14 @@ Library and executable code can be used with =python3=.
 
 ** data files
 
+   The sperm cell, analyzed by Ben:
    #+BEGIN_SRC sh
    cp -r install_data/sperm_data ~/.sperm_data
+   #+END_SRC
+
+   Chlamydomonas cell, measured by Christian, analyzed by myself:
+   #+BEGIN_SRC sh
+   cp -r install_data/chlamy_data ~/.chlamy_data
    #+END_SRC
 
 

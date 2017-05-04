@@ -2,3 +2,16 @@ doc/*
 __pycache__
 *.swp
 .#*
+/example_sperm_swimming/FMBEMerrors
+/example_sperm_swimming/firstSnapshot.png
+/example_sperm_swimming/fields
+/example_sperm_swimming/input.cnd
+/example_sperm_swimming/input.dat
+/example_sperm_swimming/output.dat
+/example_sperm_swimming/output.log
+/example_sperm_swimming/output.plt
+/example_sperm_swimming/points
+/example_sperm_swimming/remembery.py
+/example_sperm_swimming/snapshot-5.png
+/example_sperm_swimming/trias
+/step0000
